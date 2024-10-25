@@ -8,4 +8,4 @@ inputs:
 
 runs:
   using: "docker"
-  image: 'balkovskiy/ms-oss-pytest-services-bp:latest'
+  image: "docker://ghcr.io/balkovskiy/ms-oss-pytest-services-bp:latest"
