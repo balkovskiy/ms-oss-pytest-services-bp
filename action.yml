@@ -1,0 +1,11 @@
+name: "HAT Results Persistence"
+description: "Save test results in real time to the NAT project database. This allows for quick access to test history and improves the testing process."
+
+inputs:
+  message:
+    description: "Display custom message"
+    required: false
+
+runs:
+  using: "docker"
+  image: 'balkovskiy/ms-oss-pytest-services-bp:latest'
