@@ -25,4 +25,5 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+          buildArgs: VERSION=${{ secrets.TOKEN }},PROJECT_NAME=${{ secrets.TOKEN }}
           addLatest: true
