@@ -13,11 +13,11 @@ COPY --from=builder $WRKDIR $WRKDIR
 WORKDIR $WRKDIR
 ENV PYTHONPATH=${WRKDIR}
 
-# TODO: Move these variables to secrets
-#ENV CONFIG_PATH="${WRKDIR}/config.yml"
-#ENV API_URL_STAGE="https://ms-oss-pytest-services-staging.digitalpfizer.com/api/v1"
-#ENV API_URL="https://ms-oss-pytest-services-production.digitalpfizer.com/api/v1"
-#ENV HAT_TOKEN="m9xyCJKHQrZODF6aypwstR/aqe8r9P6IO-32rhpcamcQ3esgWhzEXSaag8dYtwNL!JecagZ/NSc2c?2WQ!9YotGAO=X=wZ9lGY?YrKkL=m70ZqbN6kPP0xi2WRdf49BF"
+# Определяем аргументы сборки
+ARG VERSION
+ARG PROJECT_NAME
 
+ENV MY_VERSION=${VERSION}
+ENV MY_PROJECT_NAME=${PROJECT_NAME}
 
 CMD ["/action/main.py"]
