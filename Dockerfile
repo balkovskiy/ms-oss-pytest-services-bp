@@ -1,11 +1,11 @@
 ARG WRKDIR=/action
 
-FROM python:3.9 AS builder
+FROM python:3.11 AS builder
 ARG WRKDIR
 ADD . $WRKDIR
 WORKDIR $WRKDIR
 RUN pip install --upgrade pip
-RUN pip install -r requirements.txt --target=$WRKDIR
+RUN #pip install -r requirements.txt --target=$WRKDIR
 
 FROM gcr.io/distroless/python3-debian11
 ARG WRKDIR
