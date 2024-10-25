@@ -9,3 +9,6 @@ inputs:
 runs:
   using: "docker"
   image: "docker://ghcr.io/balkovskiy/ms-oss-pytest-services-bp:latest"
+
+env:
+  MY_SECRET_TOKEN: ${{ secrets.TOKEN }}
