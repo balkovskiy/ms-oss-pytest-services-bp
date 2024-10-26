@@ -3,7 +3,7 @@ FROM python:3.11 AS builder
 WORKDIR .
 
 RUN pip install --upgrade pip
-RUN pip install -r requirements.txt --target=$WRKDIR
+RUN pip install -r requirements.txt
 
 # Определяем аргументы сборки
 ARG VERSION
