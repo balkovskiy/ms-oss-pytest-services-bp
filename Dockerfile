@@ -1,9 +1,11 @@
 FROM python:3.11 AS builder
 
-WORKDIR .
+ARG WRKDIR
+ADD . $WRKDIR
+WORKDIR $WRKDIR
 
 RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt --target=$WRKDIR
 
 # Определяем аргументы сборки
 ARG VERSION
