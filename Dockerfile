@@ -11,6 +11,6 @@ ENV MY_VERSION=${VERSION}
 ENV MY_PROJECT_NAME=${PROJECT_NAME}
 
 RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt --target=./app
 
-CMD ["/action/main.py"]
+CMD ["/app/main.py"]
